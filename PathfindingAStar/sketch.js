@@ -14,6 +14,7 @@ function Celda(){
   this.h = 0;
 }
 
+
 function setup() {
   createCanvas(400,400);
   console.log('A*');
