@@ -7,10 +7,10 @@
 
  Para ejecutar el algoritmo debe ingresar al directorio PathfindingAStar que se encuentra dentro de este repositorio.
 
- Debe descargar esta carpeta, y abrir el index.html con algún navegador, el archivo sketch.js contiene el código con el algoritmo y la documentación, cabe decir que este algoritmo está basado en el pseudocódigo que está en wikipedia, y a diferentes tutoriales. Listados más abajo.
+ Debe descargar esta carpeta, y abrir el index.html con algún navegador, el archivo sketch.js contiene el código con el algoritmo y la documentación, cabe decir que este algoritmo está basado en el pseudocódigo que está en wikipedia, y a diferentes tutoriales,listados más abajo.
 
-[Tutorial del Canal Coding Train](https://www.youtube.com/watch?v=aKYlikFAV4k)
+ 1 [Tutorial del Canal Coding Train](https://www.youtube.com/watch?v=aKYlikFAV4k)
 
-[Tutorial de P5.js y Javascript de The Coding Train](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA)
+2 [Tutorial de P5.js y Javascript de The Coding Train](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA)
 
-[Xueqiao (Joe) Xu](https://github.com/qiao/PathFinding.js)
+3 [Xueqiao (Joe) Xu](https://github.com/qiao/PathFinding.js)
