@@ -4,6 +4,9 @@
  * draw()
  */
 
+/*
+ *Quita elementos de un array
+ */
 function quitarDelArray(arr, elemento){
   for(var i = arr.length-1; i>=0; i--){
     if(arr[i] == elemento){
@@ -12,20 +15,33 @@ function quitarDelArray(arr, elemento){
   }
 }
 
+/*
+*Calcula el h de cada celda
+*/
 function heuristico(a,b){
-  //var d = dist(a.i, a.j, b.i, b.j);
   var d = abs(a.i-b.i) + abs(a.j-b.j);
   return d;
 }
 
+//Cantidad de filas y columnas que tiene la cuadricula
 var columnas = 25;
 var filas = 25;
+
+//Este va a ser nuestro array, que al final va a ser la cuadricula
 var cuadricula = new Array(columnas)
+
+//La lista abierta y la lista cerrada
 var openSet = []; //Son los elementos por evaluar
 var closedSet = []; // Son los elementos ya evaluados y no tengo que volver a evaluar.
+
+//El inicio y el final
 var inicio;
 var final;
+
+//Largo y ancho de cada cuadrito de la cuadricula
 var w, h; //Para conocer el largo y ancho de cada cuadradito.
+
+//Camino final del camino optimo (backtracking)
 var camino = [];
 
 //Creando el Objeto celda que tiene la información Heurística
@@ -75,9 +91,9 @@ function Celda(i,j){
 
 
 function setup() {
-  createCanvas(400,400);
-  console.log('A*');
 
+  //Se crea el canvas donde se va a pintar la cuadrícula
+  createCanvas(400,400);
   w = width / columnas;
   h = height / filas;
 
@@ -92,29 +108,28 @@ function setup() {
      }
    }
 
+   //Se añaden los vecinos de cada celda
    for(var i = 0; i < columnas; i++){
      for(var j = 0; j < filas; j++){
        cuadricula[i][j].anadirVecinos(cuadricula);
       }
    }
 
-
-  inicio = cuadricula[0][0];
-  final  = cuadricula[columnas - 1][filas - 1];
+   //Inicio y final del algoritmo.
+  inicio = cuadricula[0][0];   //Donde empieza
+  final  = cuadricula[columnas - 1][filas - 1]; //Donde termina
   inicio.wall = false;
   final.wall = false;
 
+  //Se inicia la lista abierta con el primer elemento
   openSet.push(inicio);
-
-  console.log(cuadricula.length);
-  console.log(cuadricula);
-
 }
 
 function draw(){
-
+  //Si todavía sigo búscando un camino.
   if (openSet.length > 0 ){
-    var menorIndice = 0;
+
+    var menorIndice = 0; //La mejor celda a la cual ir
     for(var i = 0; i < openSet.length; i++){
       if(openSet[i].f < openSet[menorIndice].f) {
         menorIndice = i;
@@ -122,21 +137,24 @@ function draw(){
     }
     var actual = openSet[menorIndice];
 
+    //Si ya terminé
     if (actual === final) {
       noLoop();
       console.log("Finalizado!");
     }
 
-    quitarDelArray(openSet, actual);
-    closedSet.push(actual);
+    //Muevo la celda que era la mejor opción a la lista cerrada.
+    quitarDelArray(openSet, actual); //La quito de la lista abierta
+    closedSet.push(actual);         //La coloco en la lista cerrada.
 
+    //Se revisan todos los vecinos
     var vecinos = actual.vecinos;
     for( var i = 0; i < vecinos.length; i++ ){
       var vecino = vecinos[i];
 
+      //Si se encuetra la mejor celda a la cual seguir
       if( !closedSet.includes(vecino) && !vecino.wall ){
-        var tempG = actual.g + 1;
-
+      var tempG = actual.g + 1;
       if(openSet.includes(vecino)){
         if(tempG < vecino.g){
           vecino.g = tempG;
@@ -154,7 +172,7 @@ function draw(){
     }
   }
     else{
-    //no solution
+    //No hay solución
   }
 
   background(0);
