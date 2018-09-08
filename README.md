@@ -9,11 +9,8 @@
 
  Debe descargar esta carpeta, y abrir el index.html con algún navegador, el archivo sketch.js contiene el código con el algoritmo y la documentación, cabe decir que este algoritmo está basado en el pseudocódigo que está en wikipedia, y a diferentes tutoriales. Listados más abajo.
 
-[Tutorial del Canal Coding Train]
-(https://www.youtube.com/watch?v=aKYlikFAV4k)
+[Tutorial del Canal Coding Train](https://www.youtube.com/watch?v=aKYlikFAV4k)
 
-[Tutorial de P5.js y Javascript de The Coding Train]
-(https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA)
+[Tutorial de P5.js y Javascript de The Coding Train](https://www.youtube.com/playlist?list=PLRqwX-V7Uu6Zy51Q-x9tMWIv9cueOFTFA)
 
-[Xueqiao (Joe) Xu]
-(https://github.com/qiao/PathFinding.js)
+[Xueqiao (Joe) Xu](https://github.com/qiao/PathFinding.js)
