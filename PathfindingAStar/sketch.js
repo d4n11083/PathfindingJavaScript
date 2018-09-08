@@ -39,7 +39,7 @@ function Celda(i,j){
   this.previous = undefined;
   this.wall = false;
 
-  if (random(1) < 0.1){
+  if (random(1) < 0.3){
     this.wall = true;
   }
 
@@ -101,6 +101,8 @@ function setup() {
 
   inicio = cuadricula[0][0];
   final  = cuadricula[columnas - 1][filas - 1];
+  inicio.wall = false;
+  final.wall = false;
 
   openSet.push(inicio);
 
